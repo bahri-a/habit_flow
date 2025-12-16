@@ -1,40 +1,46 @@
 name: habit_flow
 description: "A new Flutter project."
 publish_to: 'none'
-
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.8
-  flutter_riverpod: ^3.0.0
-  hive_ce: ^2.15.1
-  hive_ce_flutter: ^2.3.3
-  shared_preferences: ^2.5.3
-  dio: ^5.8.0+1
-  freezed_annotation: ^3.0.0
-  json_annotation: ^4.9.0
+  
+  # Deine Libraries
+  flutter_riverpod: ^2.5.1  # ^3.0.0 ist noch in Pre-Release/Beta, 2.5.1 ist stable. Falls du 3 willst, lass es stehen.
   go_router: ^14.8.1
+  dio: ^5.8.0+1
+  shared_preferences: ^2.5.3
   google_fonts: ^6.2.1
   shimmer: ^3.0.0
+  cupertino_icons: ^1.0.8
+  
+
+  # Hive Setup (Nur das Original, kein CE, passend zum Generator)
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # JSON
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  flutter_lints: ^5.0.0
-
-  build_runner: ^2.4.14
-  hive_ce_generator: ^1.9.0
-
-  freezed: ^3.0.6
-  json_serializable: ^6.9.4
-  dart_code_linter: ^3.1.1
+  
+  # Achtung: Lints 5.0 beißt sich oft mit dem alten Hive Generator. 
+  # Falls es knallt, geh auf ^4.0.0 runter.
+  flutter_lints: ^4.0.0 
+  
+  # Build Tools
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  
+  # WICHTIG: Hive Generator funktioniert nur mit dem normalen "hive", nicht "hive_ce"
+  hive_generator: ^2.0.1
 
 flutter:
   uses-material-design: true
